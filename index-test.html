@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hso</title>
+<link rel="icon" type="image/png" href="./hso.png">
+</head>
+ <style>
+  	@media (prefers-color-scheme: dark) {
+      .bgc {
+          background-color: black;
+      .emoji{
+
+      }
+      }
+    }
+  </style>
+<body class="bgc">
+<h3 id="emoji" style="font-size:100px; text-align: center; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%)">&#129316;</h3>
+</body>
+ 	<script>
+
+		function setColorScheme(scheme) {
+  switch(scheme){
+    case 'dark':
+          		console.log("matched");
+    		var element = document.body;
+			var content = document.getElementById("emoji");
+			element.className = "dark-mode";
+			content.innerText = "&#129397;";
+      break;
+    case 'light':
+      var element = document.body;
+			var content = document.getElementById("emoji");
+			element.className = "light-mode";
+			content.innerText = "test";
+      break;
+  }
+}
+
+function getPreferredColorScheme() {
+  if (window.matchMedia) {
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      return 'dark';
+    } else {
+      return 'light';
+    }
+  }
+  return 'light';
+}
+	</script>
+</html>
+
